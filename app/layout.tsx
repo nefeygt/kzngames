@@ -7,7 +7,7 @@ const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono", displ
 const pixel = Press_Start_2P({ subsets: ["latin"], weight: "400", variable: "--font-pixel", display: "swap" });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://kzngames.com"),
+  metadataBase: new URL("https://kzngames.me"),
   title: {
     default: "KZN Games — Where Childhood Nostalgia Meets Next-Gen Mobile Play",
     template: "%s · KZN Games",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   keywords: ["KZN Games", "mobile games", "hybrid-casual", "augmented reality", "AR games", "AI games", "game studio"],
   openGraph: {
     type: "website",
-    url: "https://kzngames.com",
+    url: "https://kzngames.me",
     siteName: "KZN Games",
     title: "KZN Games — Retro Soul, Next-Gen Tech",
     description: "Hybrid-casual and AR mobile games powered by real-time adaptive AI.",

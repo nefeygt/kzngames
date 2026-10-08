@@ -8,7 +8,7 @@ export default function PrivacyPage() {
     <LegalPage title="Privacy Policy" updated="October 8, 2026">
       <p>
         This policy explains what information KZN Games Inc. (&ldquo;KZN Games&rdquo;, &ldquo;we&rdquo;) collects
-        through kzngames.com and how we use it.
+        through kzngames.me and how we use it.
       </p>
       <h2>Information we collect</h2>
       <p>
@@ -24,11 +24,11 @@ export default function PrivacyPage() {
       <h2>Your choices</h2>
       <p>
         You can unsubscribe from our emails at any time, or ask us to access or delete your data by writing to{" "}
-        <a href="mailto:support@kzngames.com">support@kzngames.com</a>.
+        <a href="mailto:support@kzngames.me">support@kzngames.me</a>.
       </p>
       <h2>Contact</h2>
       <p>
-        Questions about this policy can be sent to <a href="mailto:support@kzngames.com">support@kzngames.com</a>.
+        Questions about this policy can be sent to <a href="mailto:support@kzngames.me">support@kzngames.me</a>.
       </p>
     </LegalPage>
   );

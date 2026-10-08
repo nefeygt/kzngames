@@ -7,7 +7,7 @@ export default function TermsPage() {
   return (
     <LegalPage title="Terms of Use" updated="October 8, 2026">
       <p>
-        By using kzngames.com you agree to these terms. If you do not agree, please do not use the website.
+        By using kzngames.me you agree to these terms. If you do not agree, please do not use the website.
       </p>
       <h2>Website content</h2>
       <p>
@@ -21,7 +21,7 @@ export default function TermsPage() {
       </p>
       <h2>Contact</h2>
       <p>
-        Questions about these terms can be sent to <a href="mailto:support@kzngames.com">support@kzngames.com</a>.
+        Questions about these terms can be sent to <a href="mailto:support@kzngames.me">support@kzngames.me</a>.
       </p>
     </LegalPage>
   );
