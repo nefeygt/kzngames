@@ -20,7 +20,7 @@ const TEAM: Member[] = [
   {
     name: "Tuğba Cebeci",
     role: "Co-Founder & Product Owner",
-    email: "tugba@kzngames.com",
+    email: "tugba@kzngames.me",
     bio: "Owns the product vision and roadmap, turning player insight into clear priorities for every KZN title.",
     photo: "/team/tugba-cebeci.jpg",
     accent: "#00f2fe",
@@ -29,7 +29,7 @@ const TEAM: Member[] = [
   {
     name: "Nazım Yiğit",
     role: "Co-Founder & Business Development",
-    email: "nazim@kzngames.com",
+    email: "nazim@kzngames.me",
     bio: "Leads partnerships, publishing relationships, and the business strategy behind the studio's growth.",
     photo: "/team/nazim-yigit.jpg",
     accent: "#ffb547",
@@ -38,7 +38,7 @@ const TEAM: Member[] = [
   {
     name: "Savaş Balta",
     role: "Game Developer & DevOps",
-    email: "savas@kzngames.com",
+    email: "savas@kzngames.me",
     bio: "Builds gameplay systems and keeps the build, test, and release pipelines fast and reliable.",
     photo: "/team/savas-balta.jpg",
     accent: "#a855f7",
@@ -47,7 +47,7 @@ const TEAM: Member[] = [
   {
     name: "İlhan Demirel",
     role: "Game Architect",
-    email: "ilhan@kzngames.com",
+    email: "ilhan@kzngames.me",
     bio: "Designs the technical architecture of our games, from core loops and AI systems to AR runtime structure.",
     photo: "/team/ilhan-demirel.jpg",
     accent: "#34d399",
