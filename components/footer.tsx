@@ -1,4 +1,4 @@
-import { ArrowUpRight, Mail } from "lucide-react";
+import { ArrowUpRight, LifeBuoy } from "lucide-react";
 import { Logo } from "@/components/ui/logo";
 
 const LINKS = [
@@ -8,13 +8,13 @@ const LINKS = [
       { label: "Games", href: "#games" },
       { label: "Technology", href: "#technology" },
       { label: "Team", href: "#team" },
-      { label: "Careers", href: "mailto:contact@kzngames.com?subject=Careers%20at%20KZN%20Games" },
+      { label: "Careers", href: "mailto:support@kzngames.com?subject=Careers%20at%20KZN%20Games" },
     ],
   },
   {
     title: "Resources",
     items: [
-      { label: "Press Kit", href: "mailto:contact@kzngames.com?subject=Press%20Kit%20Request" },
+      { label: "Press Kit", href: "mailto:support@kzngames.com?subject=Press%20Kit%20Request" },
       { label: "Privacy Policy", href: "/privacy" },
       { label: "Terms", href: "/terms" },
       { label: "Early Access", href: "#waitlist" },
@@ -33,13 +33,15 @@ export function Footer() {
               KZN Games is an independent mobile game studio building hybrid-casual and AR experiences powered by
               real-time adaptive AI — with the soul of the games we grew up on.
             </p>
-            <a
-              href="mailto:contact@kzngames.com"
-              className="mt-6 inline-flex items-center gap-2 rounded-lg border border-white/[0.08] bg-white/[0.02] px-3.5 py-2 font-mono text-xs text-zinc-300 transition-colors hover:border-cyber/40 hover:text-cyber"
-            >
-              <Mail className="h-3.5 w-3.5" />
-              contact@kzngames.com
-            </a>
+            <div className="mt-6 flex flex-wrap gap-2">
+              <a
+                href="mailto:support@kzngames.com"
+                className="inline-flex items-center gap-2 rounded-lg border border-white/[0.08] bg-white/[0.02] px-3.5 py-2 font-mono text-xs text-zinc-300 transition-colors hover:border-cyber/40 hover:text-cyber"
+              >
+                <LifeBuoy className="h-3.5 w-3.5" />
+                support@kzngames.com
+              </a>
+            </div>
           </div>
 
           {LINKS.map((col) => (

@@ -24,11 +24,11 @@ export default function PrivacyPage() {
       <h2>Your choices</h2>
       <p>
         You can unsubscribe from our emails at any time, or ask us to access or delete your data by writing to{" "}
-        <a href="mailto:contact@kzngames.com">contact@kzngames.com</a>.
+        <a href="mailto:support@kzngames.com">support@kzngames.com</a>.
       </p>
       <h2>Contact</h2>
       <p>
-        Questions about this policy can be sent to <a href="mailto:contact@kzngames.com">contact@kzngames.com</a>.
+        Questions about this policy can be sent to <a href="mailto:support@kzngames.com">support@kzngames.com</a>.
       </p>
     </LegalPage>
   );

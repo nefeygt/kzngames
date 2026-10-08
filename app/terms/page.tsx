@@ -21,7 +21,7 @@ export default function TermsPage() {
       </p>
       <h2>Contact</h2>
       <p>
-        Questions about these terms can be sent to <a href="mailto:contact@kzngames.com">contact@kzngames.com</a>.
+        Questions about these terms can be sent to <a href="mailto:support@kzngames.com">support@kzngames.com</a>.
       </p>
     </LegalPage>
   );

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Check, Copy, Mail } from "lucide-react";
+import Image from "next/image";
 import { useState } from "react";
 import { PixelTag, SectionHeading, TiltCard } from "@/components/ui/primitives";
 
@@ -10,103 +11,49 @@ type Member = {
   role: string;
   email: string;
   bio: string;
-  colors: [string, string];
+  photo: string;
+  accent: string;
   tag: string;
 };
 
 const TEAM: Member[] = [
   {
-    name: "Efe Yigit",
-    role: "Co-Founder & Technical Lead",
-    email: "efe@kzngames.com",
-    bio: "Specialized in systems engineering, gameplay infrastructure, and client-side architecture.",
-    colors: ["#00f2fe", "#7928ca"],
+    name: "Tuğba Cebeci",
+    role: "Co-Founder & Product Owner",
+    email: "tugba@kzngames.com",
+    bio: "Owns the product vision and roadmap, turning player insight into clear priorities for every KZN title.",
+    photo: "/team/tugba-cebeci.jpg",
+    accent: "#00f2fe",
     tag: "P1",
   },
   {
-    name: "Kaan Demir",
-    role: "Co-Founder & Head of Game Design",
-    email: "kaan@kzngames.com",
-    bio: "Focused on hybrid-casual game loops, neurochemical engagement triggers, and AR mechanics.",
-    colors: ["#ffb547", "#ff3cac"],
+    name: "Nazım Yiğit",
+    role: "Co-Founder & Business Development",
+    email: "nazim@kzngames.com",
+    bio: "Leads partnerships, publishing relationships, and the business strategy behind the studio's growth.",
+    photo: "/team/nazim-yigit.jpg",
+    accent: "#ffb547",
     tag: "P2",
   },
   {
-    name: "Zeynep Kaya",
-    role: "Lead AI & Graphics Engineer",
-    email: "zeynep@kzngames.com",
-    bio: "Building procedural generation pipelines, shader optimization, and spatial mapping.",
-    colors: ["#a855f7", "#00f2fe"],
+    name: "Savaş Balta",
+    role: "Game Developer & DevOps",
+    email: "savas@kzngames.com",
+    bio: "Builds gameplay systems and keeps the build, test, and release pipelines fast and reliable.",
+    photo: "/team/savas-balta.jpg",
+    accent: "#a855f7",
     tag: "P3",
   },
   {
-    name: "Nazim Arslan",
-    role: "Head of Product & Growth",
-    email: "nazim@kzngames.com",
-    bio: "Driving user acquisition, live-ops frameworks, and community ecosystems.",
-    colors: ["#34d399", "#00f2fe"],
+    name: "İlhan Demirel",
+    role: "Game Architect",
+    email: "ilhan@kzngames.com",
+    bio: "Designs the technical architecture of our games, from core loops and AI systems to AR runtime structure.",
+    photo: "/team/ilhan-demirel.jpg",
+    accent: "#34d399",
     tag: "P4",
   },
 ];
-
-function hash(str: string) {
-  let h = 2166136261;
-  for (let i = 0; i < str.length; i++) {
-    h ^= str.charCodeAt(i);
-    h = Math.imul(h, 16777619);
-  }
-  return h >>> 0;
-}
-
-/** Deterministic, symmetric 8-bit "space invader" style avatar with initials. */
-function PixelAvatar({ name, colors }: { name: string; colors: [string, string] }) {
-  const seed = hash(name);
-  const size = 5;
-  const cells: { x: number; y: number }[] = [];
-  for (let y = 0; y < size; y++) {
-    for (let x = 0; x < Math.ceil(size / 2); x++) {
-      if ((seed >> (y * 3 + x)) & 1) {
-        cells.push({ x, y });
-        if (x !== size - 1 - x) cells.push({ x: size - 1 - x, y });
-      }
-    }
-  }
-  const initials = name
-    .split(" ")
-    .map((n) => n[0])
-    .join("");
-  const gid = `g-${seed}`;
-
-  return (
-    <svg viewBox="0 0 80 80" className="h-20 w-20" role="img" aria-label={`${name} avatar`}>
-      <defs>
-        <linearGradient id={gid} x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor={colors[0]} />
-          <stop offset="1" stopColor={colors[1]} />
-        </linearGradient>
-      </defs>
-      <rect width="80" height="80" rx="18" fill="#181824" />
-      <rect x="1" y="1" width="78" height="78" rx="17" fill="none" stroke={`url(#${gid})`} strokeOpacity="0.6" />
-      <g opacity="0.22">
-        {cells.map((c, i) => (
-          <rect key={i} x={10 + c.x * 12} y={10 + c.y * 12} width="11" height="11" fill={`url(#${gid})`} />
-        ))}
-      </g>
-      <text
-        x="40"
-        y="47"
-        textAnchor="middle"
-        fontSize="22"
-        fontWeight="800"
-        letterSpacing="1"
-        fill={`url(#${gid})`}
-        style={{ fontFamily: "var(--font-inter), sans-serif" }}
-      >
-        {initials}
-      </text>
-    </svg>
-  );
-}
 
 function EmailButton({ email }: { email: string }) {
   const [copied, setCopied] = useState(false);
@@ -162,21 +109,32 @@ export function Team() {
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.6, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
             >
-              <TiltCard glow={`${m.colors[0]}22`} maxTilt={5} className="h-full">
-                <article className="flex h-full flex-col rounded-2xl border border-white/[0.07] bg-void-900/80 p-6 transition-colors duration-300 group-hover:border-white/[0.14]">
-                  <div className="flex items-start justify-between">
-                    <div className="transition-transform duration-300 group-hover:-translate-y-1">
-                      <PixelAvatar name={m.name} colors={m.colors} />
-                    </div>
-                    <PixelTag tone="zinc">{m.tag}</PixelTag>
+              <TiltCard glow={`${m.accent}22`} maxTilt={5} className="h-full">
+                <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-white/[0.07] bg-void-900/80 transition-colors duration-300 group-hover:border-white/[0.14]">
+                  <div className="relative aspect-square overflow-hidden bg-void-800">
+                    <Image
+                      src={m.photo}
+                      alt={`${m.name}, ${m.role}`}
+                      fill
+                      sizes="(min-width: 1280px) 300px, (min-width: 640px) 45vw, 90vw"
+                      className="object-cover grayscale-[35%] transition-all duration-500 group-hover:scale-[1.03] group-hover:grayscale-0"
+                    />
+                    <div className="crt-lines pointer-events-none absolute inset-0 opacity-60" />
+                    <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-void-900 to-transparent" />
+                    <PixelTag tone="zinc" className="absolute right-4 top-4 bg-void-950/70 backdrop-blur">
+                      {m.tag}
+                    </PixelTag>
+                    <span className="absolute bottom-0 left-0 h-[2px] w-full" style={{ background: m.accent }} />
                   </div>
-                  <h3 className="mt-5 text-lg font-semibold tracking-tight text-white">{m.name}</h3>
-                  <p className="mt-0.5 text-sm font-medium" style={{ color: m.colors[0] }}>
-                    {m.role}
-                  </p>
-                  <p className="mt-3 text-sm leading-relaxed text-zinc-400">{m.bio}</p>
-                  <div className="mt-auto pt-6">
-                    <EmailButton email={m.email} />
+                  <div className="flex flex-1 flex-col p-6">
+                    <h3 className="text-lg font-semibold tracking-tight text-white">{m.name}</h3>
+                    <p className="mt-0.5 text-sm font-medium" style={{ color: m.accent }}>
+                      {m.role}
+                    </p>
+                    <p className="mt-3 text-sm leading-relaxed text-zinc-400">{m.bio}</p>
+                    <div className="mt-auto pt-6">
+                      <EmailButton email={m.email} />
+                    </div>
                   </div>
                 </article>
               </TiltCard>
