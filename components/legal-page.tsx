@@ -8,7 +8,7 @@ export function LegalPage({ title, updated, children }: { title: string; updated
     <div className="min-h-screen bg-void-950">
       <header className="border-b border-white/[0.06]">
         <div className="container flex h-16 items-center justify-between">
-          <Logo />
+          <Logo href="/" />
           <Link href="/" className="inline-flex items-center gap-2 text-sm text-zinc-400 transition-colors hover:text-white">
             <ArrowLeft className="h-4 w-4" />
             Back to home
